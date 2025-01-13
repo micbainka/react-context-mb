@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { SecondaryComponent } from "./SecondaryComponent";
-export const MainComponent = (props) => {
+import { DataContext } from "../App";
+
+export const MainComponent = () => {
+  const { user } = useContext(DataContext);
+
   return (
     <div>
-      <h2> Main Component: </h2>
-      <p>user: {props.user}</p>
-      <SecondaryComponent city={props.city}> </SecondaryComponent>
+      <h2>Main Component:</h2>
+      <p>user: {user}</p>
+      <SecondaryComponent />
     </div>
   );
 };
